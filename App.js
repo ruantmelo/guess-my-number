@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { GameScreen } from './screens/GameScreen';
 import { COLORS } from './constants/colors';
 import { GameOverScreen } from './screens/GameOverScreen';
+import { StatusBar } from 'expo-status-bar';
 
 import { useFonts } from 'expo-font';
 
@@ -71,6 +72,8 @@ export default function App() {
  
 
   return (
+    <>
+    <StatusBar style="light" />
     <LinearGradient onLayout={onLayoutRootView} colors={[COLORS.primary700, COLORS.accent500, ]} style={styles.rootScreen}>
       <ImageBackground imageStyle={styles.backgroundImage} style={styles.rootScreen} resizeMode='cover' source={require('./assets/images/background.png')}>
         <SafeAreaView style={styles.rootScreen}>
@@ -79,6 +82,7 @@ export default function App() {
         
       </ImageBackground>
     </LinearGradient>
+    </>
    
   );
 }
